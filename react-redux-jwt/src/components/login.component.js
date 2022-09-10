@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
@@ -81,7 +81,7 @@ class Login extends Component {
     }
 
     return (
-      <div className="col-md-12">
+      <div className="col-md-12 p-4">
         <div className="card bg-light text-dark">
           <h1><center>Login</center></h1>
 
@@ -93,7 +93,7 @@ class Login extends Component {
             }}
           >
             <div className="form-group">
-              <label htmlFor="username">Username</label>
+              
               <Input
                 type="text"
                 className="form-control"
@@ -101,11 +101,12 @@ class Login extends Component {
                 value={this.state.username}
                 onChange={this.onChangeUsername}
                 validations={[required]}
+                placeholder="Enter your Email"
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="password">Password</label>
+              
               <Input
                 type="password"
                 className="form-control"
@@ -113,6 +114,7 @@ class Login extends Component {
                 value={this.state.password}
                 onChange={this.onChangePassword}
                 validations={[required]}
+                placeholder="Enter your Password"
               />
             </div>
 
@@ -125,7 +127,10 @@ class Login extends Component {
                   <span className="spinner-border spinner-border-sm"></span>
                 )}
                 <span>Login</span>
-              </button>
+              </button><h2></h2>
+              <p><i><h6>Create an Account  <Link to="/register" className="formFieldLink">
+                  Sign Up
+            </Link></h6></i></p>
             </div>
 
             {message && (

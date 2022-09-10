@@ -2,8 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Router, Switch, Route, Link } from "react-router-dom";
 
+import { Sign_img } from "./components/Sign_img";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import "./App.css";
+import { FaHome, FaUserAlt, FaUserPlus, FaSignInAlt} from "react-icons/fa";
+import {GrLogin} from "react-icons/gr"
 import Login from "./components/login.component";
 import Register from "./components/register.component";
 import Profile from "./components/profile.component";
@@ -12,6 +16,8 @@ import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
 import { history } from './helpers/history';
 import EventBus from "./common/EventBus";
+
+
 
 class App extends Component {
   constructor(props) {
@@ -58,9 +64,10 @@ class App extends Component {
     return (
       <Router history={history}>
         <div>
-          <nav className="navbar navbar-expand navbar-dark bg-dark">
+          
+          <nav className="navbar navbar-expand navbar-dark" >
             <Link to={"/"} className="navbar-brand">
-              Knowledgefactory
+              <h5><FaHome /> XYZ Pharmacy</h5>
             </Link>
             <div className="navbar-nav mr-auto">
               
@@ -90,20 +97,21 @@ class App extends Component {
               <div className="navbar-nav ml-auto">
                 <li className="nav-item">
                   <Link to={"/login"} className="nav-link">
-                    Login
+                    <FaSignInAlt/><h5>Login</h5>
                   </Link>
                 </li>
 
                 <li className="nav-item">
                   <Link to={"/register"} className="nav-link">
-                    Sign Up
+                  <FaUserPlus/> Sign Up
                   </Link>
                 </li>
               </div>
             )}
           </nav>
-
-          <div className="container mt-3">
+        <div className="container mt-6">
+        <section className="d-flex justify-content-between">
+          <div className="container mt-3  col-lg-5" >
             <Switch>
               <Route exact path={["/", "/register"]} component={Register} />
               <Route exact path="/login" component={Login} />
@@ -112,6 +120,10 @@ class App extends Component {
               <Route exact path="/user" component={User} />
             </Switch>
           </div>
+            <Sign_img/>
+          </section>
+        </div>
+        
         </div>
       </Router>
     );
