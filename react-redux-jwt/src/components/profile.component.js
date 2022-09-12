@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Redirect } from 'react-router-dom';
 import { connect } from "react-redux";
+import Aboutus from "./Aboutus";
+import Navbar_beforelogin from "./Navbar_beforelogin";
+import Footer from "./Footer";
+import Landingpage from "./Landingpage";
 
 class Profile extends Component {
 
@@ -14,9 +18,12 @@ class Profile extends Component {
     }
 
     return (
-      <div class="card bg-light text-dark">
-        <h1>{currentUser.username}</h1>
-        <p>
+      <div>
+        {/* <Navbar_beforelogin/> */}
+        <Landingpage/>
+        <Footer/>
+        {/* <h1>{currentUser.username}</h1> */}
+        {/* <p>
           <strong>Id:</strong> {currentUser.id}
         </p>
         <p>
@@ -25,8 +32,10 @@ class Profile extends Component {
         <a href="#"><i class="fa fa-dribbble"></i></a>
         <a href="#"><i class="fa fa-twitter"></i></a>
         <a href="#"><i class="fa fa-linkedin"></i></a>
-        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a> */}
+        
           </div>
+          
     );
   }
 }

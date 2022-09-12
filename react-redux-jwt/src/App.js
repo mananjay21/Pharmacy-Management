@@ -18,6 +18,8 @@ import { clearMessage } from "./actions/message";
 import { history } from "./helpers/history";
 import EventBus from "./common/EventBus";
 import Footer from "./components/Footer";
+import Landingpage from "./components/Landingpage";
+import Aboutus from "./components/Aboutus";
 
 class App extends Component {
   constructor(props) {
@@ -66,9 +68,9 @@ class App extends Component {
         <div>
           <nav className="navbar navbar-expand navbar-dark">
             <Link to={"/"} className="navbar-brand">
-              <h5>
+              <b>
                 <FaHome /> XYZ Pharmacy
-              </h5>
+              </b>
             </Link>
             <div className="navbar-nav mr-auto">
               {currentUser && (
@@ -96,15 +98,15 @@ class App extends Component {
             ) : (
               <div className="navbar-nav ml-auto" >
                 <li className="nav-item">
-                  <Link to={"/login"} className="nav-link">
+                  <Link to={"/login"} className="navbar-brand">
                     <FaSignInAlt />
-                    <h5> Login</h5>
+                    Login
                   </Link>
                 </li>
 
                 <li className="nav-item">
-                  <Link to={"/register"} className="nav-link">
-                    <FaUserPlus /> <h5> Sign Up </h5>
+                  <Link to={"/register"} className="navbar-brand">
+                    <FaUserPlus />  Sign Up 
                   </Link>
                 </li>
               </div>
@@ -121,14 +123,19 @@ class App extends Component {
                   <Route exact path="/user" component={User} />
                 </Switch>
               </div>
-              <Sign_img />
+              <div className="sign_img mt-2 col-lg-5">
+              <img src="./signup_image.jpeg" style={{maxWidth:420, borderRadius:50}} alt=""/>
+            </div>
             </section>
           </div>
           
           
         </div>
-        <Navbar_beforelogin/>
+        {/* <Landingpage /> */}
         <Footer />
+        {/* <Navbar_beforelogin/>
+        
+        <Aboutus/> */}
       </Router>
     );
   }
