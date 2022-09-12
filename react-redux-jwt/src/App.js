@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Router, Switch, Route, Link } from "react-router-dom";
 
+import Navbar_beforelogin from "./components/Navbar_beforelogin";
 import { Sign_img } from "./components/Sign_img";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -93,7 +94,7 @@ class App extends Component {
                 </li>
               </div>
             ) : (
-              <div className="navbar-nav ml-auto">
+              <div className="navbar-nav ml-auto" >
                 <li className="nav-item">
                   <Link to={"/login"} className="nav-link">
                     <FaSignInAlt />
@@ -126,6 +127,7 @@ class App extends Component {
           
           
         </div>
+        <Navbar_beforelogin/>
         <Footer />
       </Router>
     );
