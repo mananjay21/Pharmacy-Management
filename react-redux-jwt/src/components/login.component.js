@@ -7,6 +7,7 @@ import CheckButton from "react-validation/build/button";
 
 import { connect } from "react-redux";
 import { login } from "../actions/auth";
+// import {fa-eye} from "react-icons/fa";
 
 const required = (value) => {
   if (!value) {
@@ -115,7 +116,11 @@ class Login extends Component {
                 onChange={this.onChangePassword}
                 validations={[required]}
                 placeholder="Enter your Password"
+                onclick="password_show_hide();"
+                
               />
+              <span toggle="password" className="fa fa-fw fa-eye field-icon toggle-password"></span>
+              
             </div>
 
             <div className="form-group">

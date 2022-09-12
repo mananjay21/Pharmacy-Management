@@ -4,20 +4,19 @@ import { Router, Switch, Route, Link } from "react-router-dom";
 
 import { Sign_img } from "./components/Sign_img";
 import "bootstrap/dist/css/bootstrap.min.css";
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
-import { FaHome, FaUserAlt, FaUserPlus, FaSignInAlt} from "react-icons/fa";
-import {GrLogin} from "react-icons/gr"
+import { FaHome, FaUserPlus, FaSignInAlt } from "react-icons/fa";
+import { GrLogin } from "react-icons/gr";
 import Login from "./components/login.component";
 import Register from "./components/register.component";
 import Profile from "./components/profile.component";
 import User from "./components/user.component";
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
-import { history } from './helpers/history';
+import { history } from "./helpers/history";
 import EventBus from "./common/EventBus";
-
-
+import Footer from "./components/Footer";
 
 class App extends Component {
   constructor(props) {
@@ -29,7 +28,7 @@ class App extends Component {
     };
 
     history.listen((location) => {
-      props.dispatch(clearMessage()); 
+      props.dispatch(clearMessage());
     });
   }
 
@@ -38,7 +37,7 @@ class App extends Component {
 
     if (user) {
       this.setState({
-        currentUser: user
+        currentUser: user,
       });
     }
 
@@ -59,18 +58,18 @@ class App extends Component {
   }
 
   render() {
-    const { currentUser} = this.state;
+    const { currentUser } = this.state;
 
     return (
       <Router history={history}>
         <div>
-          
-          <nav className="navbar navbar-expand navbar-dark" >
+          <nav className="navbar navbar-expand navbar-dark">
             <Link to={"/"} className="navbar-brand">
-              <h5><FaHome /> XYZ Pharmacy</h5>
+              <h5>
+                <FaHome /> XYZ Pharmacy
+              </h5>
             </Link>
             <div className="navbar-nav mr-auto">
-              
               {currentUser && (
                 <li className="nav-item">
                   <Link to={"/user"} className="nav-link">
@@ -97,34 +96,37 @@ class App extends Component {
               <div className="navbar-nav ml-auto">
                 <li className="nav-item">
                   <Link to={"/login"} className="nav-link">
-                    <FaSignInAlt/><h5>Login</h5>
+                    <FaSignInAlt />
+                    <h5> Login</h5>
                   </Link>
                 </li>
 
                 <li className="nav-item">
                   <Link to={"/register"} className="nav-link">
-                  <FaUserPlus/> Sign Up
+                    <FaUserPlus /> <h5> Sign Up </h5>
                   </Link>
                 </li>
               </div>
             )}
           </nav>
-        <div className="container mt-6">
-        <section className="d-flex justify-content-between">
-          <div className="container mt-3  col-lg-5" >
-            <Switch>
-              <Route exact path={["/", "/register"]} component={Register} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/profile" component={Profile} />
-              <Route exact path="/user" component={User} />
-            </Switch>
+          <div className="container mt-6">
+            <section className="d-flex justify-content-between">
+              <div className="container mt-3  col-lg-5">
+                <Switch>
+                  <Route exact path={["/", "/register"]} component={Register} />
+                  <Route exact path="/login" component={Login} />
+                  <Route exact path="/register" component={Register} />
+                  <Route exact path="/profile" component={Profile} />
+                  <Route exact path="/user" component={User} />
+                </Switch>
+              </div>
+              <Sign_img />
+            </section>
           </div>
-            <Sign_img/>
-          </section>
+          
+          
         </div>
-        
-        </div>
+        <Footer />
       </Router>
     );
   }
