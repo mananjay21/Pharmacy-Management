@@ -38,7 +38,7 @@ const name = (value) => {
   }
 };
 const phNo = (value) => {
-  if (value.length!=10) {
+  if (value.length!==10) {
     return (
       <div className="alert alert-danger" role="alert">
         The phone Numbder must of 10 digits.

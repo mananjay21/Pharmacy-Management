@@ -1,4 +1,4 @@
-package com.cg.OrderService.Model;
+package com.cg.OrderService.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;

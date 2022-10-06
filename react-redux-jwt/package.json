@@ -10,17 +10,30 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.27.2",
+<<<<<<< HEAD
     "bootstrap": "^4.5.2",
+=======
+    "bootstrap": "^5.0.2",
+>>>>>>> c6899383f5923a16ccc18c13636f57d5ac523740
     "bootstrap-icons": "^1.9.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.4.0",
+<<<<<<< HEAD
     "react-redux": "^7.2.1",
+=======
+    "react-redux": "^7.2.8",
+>>>>>>> c6899383f5923a16ccc18c13636f57d5ac523740
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.1",
     "react-validation": "^3.0.7",
+<<<<<<< HEAD
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+=======
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.4.1",
+>>>>>>> c6899383f5923a16ccc18c13636f57d5ac523740
     "validator": "^13.1.1"
   },
   "scripts": {
@@ -45,6 +58,6 @@
     ]
   },
   "devDependencies": {
-    "redux-devtools-extension": "^2.13.8"
+    "redux-devtools-extension": "^2.13.9"
   }
 }

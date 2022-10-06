@@ -7,6 +7,9 @@ label {
   max-width: 350px !important;
   padding: 40px 40px;
 }
+.text{
+  vertical-align: bottom;
+}
 
 .card {
   background-color: #ffffff;
@@ -20,6 +23,7 @@ label {
 }
 
 .btn{
+<<<<<<< HEAD
   background-color:rgb(65, 185, 129, 1);
 }
 .btn :hover{
@@ -47,6 +51,19 @@ label {
   height: 100px;
   align-items: center;
   margin-top: 80x;
+=======
+  background-color:rgb(67, 91, 79);
+}
+.btn :hover{
+  background-color:rgb(25, 83, 56);
+}
+
+.navbar{
+  background-color:rgb(65, 185, 129, 1);
+}
+.nav-link{
+  color: #ffffff;
+>>>>>>> c6899383f5923a16ccc18c13636f57d5ac523740
 }
 
 .profile-img-card {
@@ -61,6 +78,10 @@ label {
 
 /* .form-group{
   padding-bottom: 5px;
+<<<<<<< HEAD
 } */
 
 
+=======
+} */
+>>>>>>> c6899383f5923a16ccc18c13636f57d5ac523740
